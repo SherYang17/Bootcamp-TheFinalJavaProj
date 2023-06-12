@@ -6,3 +6,9 @@ Exercise Type: asdf
 Duration: 23 minutes
 Calories Burned: 32
 
+Exercise Type: pleasehelpme
+Duration: 123123 minutes
+Calories Burned: 3232
+Exercise Type: nononoo
+Duration: 2323 minutes
+Calories Burned: 3232

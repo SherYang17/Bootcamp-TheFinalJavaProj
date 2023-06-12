@@ -2,3 +2,7 @@ Sleep Time: 01:00
 Wake Up Time: 07:00
 Total Hours of Sleep: 6
 
+Sleep Time: 01:00
+Wake Up Time: 22:00
+Total Hours of Sleep: 21
+

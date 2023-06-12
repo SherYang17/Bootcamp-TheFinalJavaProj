@@ -85,6 +85,7 @@ public class HealthDataManager {
             writer.println("Exercise Type: " + exerciseType);
             writer.println("Duration: " + duration + " minutes");
             writer.println("Calories Burned: " + caloriesBurned);
+            writer.println();
             writer.close();
             System.out.println("Exercise activity saved to exercise.txt");
         } catch (IOException e) {

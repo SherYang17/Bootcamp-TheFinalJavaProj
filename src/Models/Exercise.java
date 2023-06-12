@@ -1,22 +1,18 @@
 package Models;
 
-import java.util.Date;
-
 public class Exercise {
-    private String type;
+    private String exerciseType;
     private int duration;
     private int caloriesBurned;
-    private Date date;
 
-    public Exercise(String type, int duration, int caloriesBurned) {
-        this.type = type;
+    public Exercise(String exerciseType, int duration, int caloriesBurned) {
+        this.exerciseType = exerciseType;
         this.duration = duration;
         this.caloriesBurned = caloriesBurned;
-        this.date = new Date();
     }
 
-    public String getName() {
-        return type;
+    public String getExerciseType() {
+        return exerciseType;
     }
 
     public int getDuration() {
@@ -26,10 +22,4 @@ public class Exercise {
     public int getCaloriesBurned() {
         return caloriesBurned;
     }
-
-    public Date getDate() {
-        return date;
-    }
-
 }
-
