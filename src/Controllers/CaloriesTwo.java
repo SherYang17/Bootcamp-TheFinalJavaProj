@@ -15,8 +15,8 @@ public class CaloriesTwo {
         }
     }
 
-    public void storeCalorieIntake(String foodItem, int calories) {
-        String data = foodItem + ", " + calories;
+    public void storeCalorieIntake(String foodItem, int calories, String date) {
+        String data = "Date: " + date + ", Food Item: " + foodItem + ", Calorie Intake: " + calories;
         storeCalorieIntake(data);
     }
 

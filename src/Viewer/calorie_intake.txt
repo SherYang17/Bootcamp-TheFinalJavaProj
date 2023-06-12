@@ -1,3 +1,2 @@
-pho, 123123123
-please, 10000000
-no, 3333000
+Date: 2022-01-01, Food Item: friesplease, Calorie Intake: 1230
+Date: 2022-01-01, Food Item: whatduh, Calorie Intake: 2121

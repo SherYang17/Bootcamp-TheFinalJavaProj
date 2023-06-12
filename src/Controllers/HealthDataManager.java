@@ -62,9 +62,12 @@ public class HealthDataManager {
 
         System.out.print("Enter the calorie intake: ");
         int calories = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character because of int
+        scanner.nextLine(); // Consume the newline character
 
-        caloriesTwo.storeCalorieIntake(foodItem, calories);
+        System.out.print("Enter the date (yyyy-MM-dd): ");
+        String date = scanner.nextLine();
+
+        caloriesTwo.storeCalorieIntake(foodItem, calories, date);
     }
 
 

@@ -1,11 +1,9 @@
 package Controllers;
 
 import Models.Exercise;
+import Models.User;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class HealthDataAnalyzer {
@@ -20,6 +18,7 @@ public class HealthDataAnalyzer {
     }
 
     public void analyzeHealth() {
+
         Scanner scanner = new Scanner(System.in);
         boolean inputRunning = true;
 
@@ -37,7 +36,7 @@ public class HealthDataAnalyzer {
 
             switch (choice) {
                 case 1:
-//                    logDailyCalorieIntake(scanner);
+                    calculateDailyCaloricBalance();
                     break;
                 case 2:
 //                    logExerciseActivity(scanner);
@@ -59,6 +58,31 @@ public class HealthDataAnalyzer {
 
 
     } // end of analyze health
+
+
+
+    private void calculateDailyCaloricBalance() {
+        User currentUser = userManager.getCurrentUser();
+        Scanner scanner = new Scanner(System.in);
+
+
+        // Get the date for which to calculate the caloric balance
+        System.out.print("Enter the date (yyyy-MM-dd): ");
+        String dateStr = scanner.nextLine();
+
+        // Retrieve the calorie intake and exercise data for the specified date
+        int calorieIntake = currentUser.getCalorieIntake(dateStr);
+        int caloriesBurned = currentUser.getCaloriesBurned(dateStr);
+
+        // Calculate the daily caloric balance
+        int caloricBalance = calorieIntake - caloriesBurned;
+
+        // Display the daily caloric balance
+        System.out.println("Daily Caloric Balance for " + dateStr + ": " + caloricBalance);
+    }
+
+
+
 
 
     private void displayExerciseLog() {
