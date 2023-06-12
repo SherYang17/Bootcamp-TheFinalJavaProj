@@ -12,3 +12,19 @@ Calories Burned: 3232
 Exercise Type: nononoo
 Duration: 2323 minutes
 Calories Burned: 3232
+Exercise Type: aksldfjlasdkfjadsf
+Duration: 321 minutes
+Calories Burned: 123
+
+Exercise Type: joggingtohome
+Duration: 123 minutes
+Calories Burned: 321
+
+Exercise Type: asdfi
+Duration: 42432 minutes
+Calories Burned: 123
+
+Exercise Type: jog
+Duration: 123 minutes
+Calories Burned: 231
+

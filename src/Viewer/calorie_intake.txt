@@ -1,2 +1,7 @@
 Date: 2022-01-01, Food Item: friesplease, Calorie Intake: 1230
 Date: 2022-01-01, Food Item: whatduh, Calorie Intake: 2121
+Date: 2022-01-01, Food Item: imalmostdone, Calorie Intake: 1230
+Date: 2022-01-01, Food Item: asdf, Calorie Intake: 321
+Date: 2022-01-01, Food Item: im dying, Calorie Intake: 123
+Date: 2022-01-01, Food Item: askldfaklsdfljksadf, Calorie Intake: 2123
+Date: 2022-01-01, Food Item: asdf, Calorie Intake: 210

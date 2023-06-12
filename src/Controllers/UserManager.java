@@ -2,6 +2,9 @@ package Controllers;
 
 import Models.User;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -22,6 +25,7 @@ public class UserManager {
 
         if (users.contains(username)) {
             currentUser = new User(username); // Create a User object for the current user
+            createFiles();
             return true; // User found
         }
         return false; // User not found
@@ -81,6 +85,21 @@ public class UserManager {
             }
         }
         return loggedIn;
+    }
+
+
+
+    public void createFiles () {
+        String username = getCurrentUsername();
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter("src/Viewer/" + username + "_calorie_intake.txt", true));
+            PrintWriter writer2 = new PrintWriter(new FileWriter("src/Viewer/" + username + "_exercise.txt", true));
+            PrintWriter writer3 = new PrintWriter(new FileWriter("src/Viewer/" + username + "_sleep_records.txt", true));
+            System.out.println("Printed!");
+        } catch (IOException e) {
+            System.out.println("An error occurred while saving the exercise activity.");
+            e.printStackTrace();
+        }
     }
 
     public String getUserCalorieIntakeFile(String username) {

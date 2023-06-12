@@ -1,0 +1,2 @@
+Date: 2022-01-01, Food Item: friesplease, Calorie Intake: 1230
+Date: 2022-01-01, Food Item: whatduh, Calorie Intake: 2121

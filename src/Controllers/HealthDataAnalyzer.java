@@ -3,7 +3,9 @@ package Controllers;
 import Models.Exercise;
 import Models.User;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class HealthDataAnalyzer {
@@ -39,7 +41,7 @@ public class HealthDataAnalyzer {
                     calculateDailyCaloricBalance();
                     break;
                 case 2:
-//                    logExerciseActivity(scanner);
+                    displaySleepRecords();
                     break;
                 case 3:
                     displayExerciseLog();
@@ -81,6 +83,19 @@ public class HealthDataAnalyzer {
         System.out.println("Daily Caloric Balance for " + dateStr + ": " + caloricBalance);
     }
 
+    public void displaySleepRecords() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("src/Viewer/sleep_records.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the sleep records file.");
+            e.printStackTrace();
+        }
+    }
 
 
 
@@ -113,8 +128,6 @@ public class HealthDataAnalyzer {
             e.printStackTrace();
         }
     }
-
-
 
 
 
