@@ -1,0 +1,8 @@
+Exercise Type: jogginh
+Duration: 12 minutes
+Calories Burned: 32
+
+Exercise Type: asdf
+Duration: 23 minutes
+Calories Burned: 32
+
