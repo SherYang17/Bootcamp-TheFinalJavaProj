@@ -3,6 +3,9 @@ package Controllers;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.Duration;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class HealthDataManager {
@@ -59,7 +62,7 @@ public class HealthDataManager {
 
         System.out.print("Enter the calorie intake: ");
         int calories = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
+        scanner.nextLine(); // Consume the newline character because of int
 
         caloriesTwo.storeCalorieIntake(foodItem, calories);
     }
@@ -91,7 +94,31 @@ public class HealthDataManager {
     }
 
     private void logSleepRecords(Scanner scanner) {
-        // TODO: Implement sleep record logging logic
+        System.out.print("Enter the time you went to sleep (hh:mm): ");
+        String sleepTimeStr = scanner.nextLine();
+
+        System.out.print("Enter the time you woke up (hh:mm): ");
+        String wakeUpTimeStr = scanner.nextLine();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        LocalTime sleepTime = LocalTime.parse(sleepTimeStr, formatter);
+        LocalTime wakeUpTime = LocalTime.parse(wakeUpTimeStr, formatter);
+
+        Duration sleepDuration = Duration.between(sleepTime, wakeUpTime);
+        long hoursOfSleep = sleepDuration.toHours();
+
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter("src/Viewer/sleep_records.txt", true));
+            writer.println("Sleep Time: " + sleepTime.format(formatter));
+            writer.println("Wake Up Time: " + wakeUpTime.format(formatter));
+            writer.println("Total Hours of Sleep: " + hoursOfSleep);
+            writer.println(); // Add an empty line between sleep entries
+            writer.close();
+            System.out.println("Sleep record saved to sleep_records.txt");
+        } catch (IOException e) {
+            System.out.println("An error occurred while saving the sleep record.");
+            e.printStackTrace();
+        }
     }
 
     private void healthDataAnalysis() {
